@@ -2,7 +2,7 @@ package headfirst.designpatterns.factory.pizzafm;
 
 public class ChicagoStyleHawaiian extends Pizza {
     public ChicagoStyleHawaiian() {
-        name = "NY Style Hawaiian Pizza";
+        name = "Chicago Style Hawaiian Pizza";
         dough = "Crust Dough";
         sauce = "Tomato Sauce";
 
