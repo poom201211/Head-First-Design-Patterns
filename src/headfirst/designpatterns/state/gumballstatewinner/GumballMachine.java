@@ -7,6 +7,7 @@ public class GumballMachine {
 	State hasQuarterState;
 	State soldState;
 	State winnerState;
+	State jackpotState;
  
 	State state = soldOutState;
 	int count = 0;
@@ -17,6 +18,7 @@ public class GumballMachine {
 		hasQuarterState = new HasQuarterState(this);
 		soldState = new SoldState(this);
 		winnerState = new WinnerState(this);
+		jackpotState = new JackpotState(this);
 
 		this.count = numberGumballs;
  		if (numberGumballs > 0) {
@@ -81,7 +83,9 @@ public class GumballMachine {
     public State getWinnerState() {
         return winnerState;
     }
- 
+
+    public State getJackpotState() { return jackpotState; }
+
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("\nMighty Gumball, Inc.");

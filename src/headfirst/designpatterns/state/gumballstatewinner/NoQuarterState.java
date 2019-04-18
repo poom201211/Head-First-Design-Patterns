@@ -1,6 +1,9 @@
 package headfirst.designpatterns.state.gumballstatewinner;
 
+import java.util.Random;
+
 public class NoQuarterState implements State {
+	Random randomWinner = new Random(System.currentTimeMillis());
     GumballMachine gumballMachine;
  
     public NoQuarterState(GumballMachine gumballMachine) {
@@ -22,8 +25,10 @@ public class NoQuarterState implements State {
  
 	public void dispense() {
 		System.out.println("You need to pay first");
-	} 
-	
+	}
+
+	public void tryMyLuck() { System.out.println("You can't try your luck without inserting a coin"); }
+
 	public void refill() { }
  
 	public String toString() {

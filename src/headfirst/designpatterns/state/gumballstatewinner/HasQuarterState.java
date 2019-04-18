@@ -32,8 +32,18 @@ public class HasQuarterState implements State {
     public void dispense() {
         System.out.println("No gumball dispensed");
     }
-    
-    public void refill() { }
+
+	public void tryMyLuck() {
+		System.out.println("You turned...");
+		int winner = randomWinner.nextInt(100);
+		if ((winner == 1) && (gumballMachine.getCount() > 1)) {
+			gumballMachine.setState(gumballMachine.getJackpotState());
+		} else {
+			gumballMachine.setState(gumballMachine.getNoQuarterState());
+		}
+	}
+
+	public void refill() { }
  
 	public String toString() {
 		return "waiting for turn of crank";

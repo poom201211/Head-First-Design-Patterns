@@ -1,6 +1,9 @@
 package headfirst.designpatterns.state.gumballstatewinner;
 
+import java.util.Random;
+
 public class SoldState implements State {
+	Random randomWinner = new Random(System.currentTimeMillis());
     GumballMachine gumballMachine;
  
     public SoldState(GumballMachine gumballMachine) {
@@ -28,7 +31,9 @@ public class SoldState implements State {
 			gumballMachine.setState(gumballMachine.getSoldOutState());
 		}
 	}
-	
+
+	public void tryMyLuck() { System.out.println("You can't try your luck without inserting a coin"); }
+
 	public void refill() { }
  
 	public String toString() {
